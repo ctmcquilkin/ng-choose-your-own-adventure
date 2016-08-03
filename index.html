@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="root">
+  <head>
+    <meta charset="UTF-8">
+    <title>Choose-Your-Own Adventure Test-case</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body ng-controller="chooseCtrl">
+
+    <div id="wrapper">
+      <h1>A trip to the moon!</h1>
+      <div id="prompt">
+        <p ng-show="option_name">You have chosen <b>{{option_name}}</b></p>
+        <p>{{scenario.prompt}}</p>
+      </div>
+      <div id="options" ng-repeat="option in scenario.options"> 
+          <button data-ng-attr-id="option.path" ng-click="display_scenario(option)">{{option.name}}</button>
+      </div>
+    </div>
+<!--     <br>
+    <button ng-click="showQuestion()">ShowQuestion</button> -->
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
